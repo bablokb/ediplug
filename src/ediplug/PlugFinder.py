@@ -90,7 +90,11 @@ class PlugFinder(object):
       network = network.split('-')
       iplist = [ ip for ip in netaddr.IPRange(network[0],network[1]) ]
     else:
-      iplist = [ ip for ip in netaddr.IPNetwork(network).iter_hosts() ]
+      try:
+        iplist = [ ip for ip in netaddr.IPNetwork(network).iter_hosts() ]
+      except netaddr.AddrFormatError as afe:
+        # assume network is a single hostname
+        iplist = [ network ]
       
     for ip in iplist:
       if self.__check(str(ip)):

@@ -19,7 +19,7 @@
 import os, sys
 import argparse
 
-sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0,os.path.join(os.path.dirname(__file__), ".."))
 from ediplug import *
 
 POWEROFF_DELAY     = 5  # delay in minutes from initiating shutdown to power off

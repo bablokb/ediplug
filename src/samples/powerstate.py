@@ -11,7 +11,7 @@
 import argparse
 import os, sys
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0,os.path.join(os.path.dirname(__file__), '..'))
 from ediplug import *
 
 if __name__ == '__main__':

@@ -34,7 +34,10 @@ if __name__ == "__main__":
   try:
     # find plug in given network
     pf = PlugFinder(password=args['password'])
-    plugs = pf.search(args['net'],maxCount=1)
+    if len(args['net']):
+      plugs = pf.search(args['net'],maxCount=1)
+    else:
+      plugs = pf.search(maxCount=1)
     if len(plugs):
       plug = plugs.values()[0]
     else:

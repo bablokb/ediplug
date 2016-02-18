@@ -27,7 +27,7 @@ if __name__ == '__main__':
   # process arguments
   try:
     pf = PlugFinder(password=args['password'])
-    plug = pf.search().values()[0]
+    plug = pf.search(maxCount=1).values()[0]
     if args['state'] <> "":
       plug.setPowerState(True if args['state'].lower() == 'on' else False)
     print 'Currently active: %s' % plug.getPowerState()

@@ -6,6 +6,10 @@
 # This will reboot the system again. The programable plug therefore
 # allows a sort of "Wake-on-RTC" for the Raspberry Pi.
 #
+# Note that you actually have to uncomment the line
+#     #os.system("sudo shutdown now")
+# which does the shutdown.
+#
 # This file is part of the project https://github.com/bablokb/ediplug
 #
 # Copyright: Bernhard Bablok
@@ -53,7 +57,7 @@ if __name__ == "__main__":
     # configure the plug (active==False between shutdownTime and bootTime)
     plug.setExclusiveState(shutdownTime,bootTime,False)
 
-    # shutdown the system
+    # shutdown the system: uncomment to activate!
     #os.system("sudo shutdown now")
 
     # after reboot, don't forget to clear the schedule:

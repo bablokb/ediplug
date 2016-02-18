@@ -108,10 +108,10 @@ Methods:
 
   - `TPoint(day,hour,minute)`: constructor
   - `TPoint.now()`: static method, returns a TPoint for "now"
-  - `day`, `hour`, 'minute': getter and setters for day, hour, minute
+  - `day`, `hour`, `minute`: getter and setters for day, hour, minute
   - `createAfter(days,hours,minutes)`: create a TPoint which is the given
     days, hours, minutes later than this object 
-  - `add(day,hour,minute)`: adds the given days, hours, minutes to the
+  - `add(days,hours,minutes)`: adds the given days, hours, minutes to the
     current object. The method returns `self` to allow method chaining.
 
 
@@ -128,7 +128,7 @@ Plug
 
 Base class of the model-specific classes `SP1101W` and `SP2101W`. The class
 implements all common methods. This is the main interface for the
-communikcation with the physical plug.
+communication with the physical plug.
 
 Methods:
 

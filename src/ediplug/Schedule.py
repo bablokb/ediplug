@@ -34,7 +34,7 @@ class Schedule(object):
     startIndex = day*1440
     endIndex   = startIndex + 1439
     dayList = self.__sched[startIndex:endIndex]
-    if self.__sched[startIndex-1] <> self.__sched[startIndex]:
+    if self.__sched[startIndex-1] != self.__sched[startIndex]:
       resultList.append((TPoint.create(startIndex),dayList[0]))
     val = dayList[0]
     try:
@@ -139,9 +139,9 @@ if __name__ == "__main__":
     s.setState(TPoint(TPoint.MON,0,0),TPoint(TPoint.TUE,0,0),True)
     s.setState(TPoint(TPoint.WED,10,0),TPoint(TPoint.WED,11,0),True)
     s.setState(TPoint(TPoint.WED,20,0),TPoint(TPoint.WED,22,0),True)
-    print s
+    print(s)
     
     for (tp,val) in  s.getSwitchList(TPoint.MON) +  s.getSwitchList(TPoint.WED) :
-      print "%s: %s" % (tp, 'ON' if val=='1' else 'OFF')
+      print("{0}: {1}".format(tp, 'ON' if val=='1' else 'OFF'))
     for d in range(7):
-      print "%d:" % d, s.getTransportSwitchList(d)
+      print("{0}: {1}".format(d, s.getTransportSwitchList(d)))

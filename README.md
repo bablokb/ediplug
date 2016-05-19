@@ -1,5 +1,5 @@
-Python Library for Edimax Smartplugs
-====================================
+Python Library for Edimax Smartplugs (reworked for Python 3.x)
+==============================================================
 
 Introduction
 ------------

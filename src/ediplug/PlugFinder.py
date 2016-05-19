@@ -111,12 +111,12 @@ class PlugFinder(object):
 if __name__ == "__main__":
   """pass network and password as arguments"""
   if len(sys.argv) < 3:
-    print "pass network and password as arguments"
+    print('pass network and password as arguments')
   else:
     pf = PlugFinder(password=sys.argv[2])
     plug = pf.search(sys.argv[1],maxCount=1).values()[0]
     name, type = plug.getNameAndType()
-    print "Name: %s\nType: %s\nURL:  %s\n" % (name, type, plug.getUrl())
+    print("Name: {0}\nType: {1}\nURL:  {2}\n".format(name, type, plug.getUrl()))
     plugInfo = plug.getSysInfo()
     for key in plugInfo.keys():
-      print "%s: %s" % (key,plugInfo[key])
+      print("{0}: {1}".format(key,plugInfo[key]))
